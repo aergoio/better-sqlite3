@@ -1,8 +1,6 @@
 # better-sqlite3-aergolite [![Build Status](https://travis-ci.org/aergoio/better-sqlite3-aergolite.svg?branch=master)](https://travis-ci.org/aergoio/better-sqlite3-aergolite) [![Build status](https://ci.appveyor.com/api/projects/status/ilk8hb8v95m54v6f/branch/master?svg=true)](https://ci.appveyor.com/project/aergoio/better-sqlite3-aergolite/branch/master)
 
-This fork of better-sqlite3 supports AergoLite
-
----
+better-sqlite3 with support for AergoLite
 
 The fastest and simplest library for SQLite3 in Node.js.
 
@@ -36,10 +34,10 @@ npm install better-sqlite3-aergolite
 
 ```js
 const uri = 'file:foobar.db?blockchain=on&password=test';
-const db = require('better-sqlite3-aergolite')(uri, options);
+const db = require('better-sqlite3-aergolite')(uri);
 
-const row = db.prepare('SELECT * FROM users WHERE id = ?').get(userId);
-console.log(row.firstName, row.lastName, row.email);
+const row = db.prepare('pragma blockchain_status').get();
+console.log(row);
 ```
 
 ## Why should I use this instead of [node-sqlite3](https://github.com/mapbox/node-sqlite3)?
