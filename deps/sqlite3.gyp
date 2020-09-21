@@ -37,6 +37,7 @@
             'outputs': [
               '<(SHARED_INTERMEDIATE_DIR)/sqlite3/sqlite3.c',
               '<(SHARED_INTERMEDIATE_DIR)/sqlite3/sqlite3.h',
+              '<(SHARED_INTERMEDIATE_DIR)/sqlite3/sqlite3ext.h',
             ],
             'action': ['node', 'symlink.js', '<(SHARED_INTERMEDIATE_DIR)/sqlite3', '<(module_root_dir)/deps/aergolite/amalgamation'],
           }],
