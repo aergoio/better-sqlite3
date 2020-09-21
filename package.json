@@ -1,13 +1,13 @@
 {
-  "name": "better-sqlite3",
+  "name": "better-sqlite3-aergolite",
   "version": "7.1.1",
-  "description": "The fastest and simplest library for SQLite3 in Node.js.",
-  "homepage": "http://github.com/JoshuaWise/better-sqlite3",
+  "description": "better-sqlite3 Node.js wrapper with AergoLite",
+  "homepage": "http://github.com/aergoio/better-sqlite3-aergolite",
   "author": "Joshua Wise <joshuathomaswise@gmail.com>",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/JoshuaWise/better-sqlite3.git"
+    "url": "git://github.com/aergoio/better-sqlite3-aergolite.git"
   },
   "dependencies": {
     "bindings": "^1.5.0",
@@ -20,8 +20,7 @@
     "fs-extra": "^8.1.0",
     "mocha": "^7.0.1",
     "nodemark": "^0.3.0",
-    "prebuild": "^10.0.0",
-    "sqlite": "^3.0.3"
+    "prebuild": "^10.0.0"
   },
   "scripts": {
     "install": "prebuild-install || npm run build-release",
@@ -35,7 +34,7 @@
     "lzz": "lzz -hx hpp -sx cpp -k BETTER_SQLITE3 -d -hl -sl -e ./src/better_sqlite3.lzz",
     "prepublishOnly": "npm run lzz"
   },
-  "license": "MIT",
+  "license": "AGPLv3",
   "keywords": [
     "sql",
     "sqlite",

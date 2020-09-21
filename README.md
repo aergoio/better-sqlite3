@@ -1,4 +1,8 @@
-# better-sqlite3 [![Build Status](https://travis-ci.org/JoshuaWise/better-sqlite3.svg?branch=master)](https://travis-ci.org/JoshuaWise/better-sqlite3) [![Build status](https://ci.appveyor.com/api/projects/status/ilk8hb8v95m54v6f/branch/master?svg=true)](https://ci.appveyor.com/project/JoshuaWise/better-sqlite3/branch/master)
+# better-sqlite3-aergolite [![Build Status](https://travis-ci.org/aergoio/better-sqlite3-aergolite.svg?branch=master)](https://travis-ci.org/aergoio/better-sqlite3-aergolite) [![Build status](https://ci.appveyor.com/api/projects/status/ilk8hb8v95m54v6f/branch/master?svg=true)](https://ci.appveyor.com/project/aergoio/better-sqlite3-aergolite/branch/master)
+
+This fork of better-sqlite3 supports AergoLite
+
+---
 
 The fastest and simplest library for SQLite3 in Node.js.
 
@@ -8,14 +12,6 @@ The fastest and simplest library for SQLite3 in Node.js.
 - Support for user-defined functions, aggregates, and extensions
 - 64-bit integers *(invisible until you need them)*
 - Worker thread support *(for large/slow queries)*
-
-## Help this project stay strong! &#128170;
-
-`better-sqlite3` is used by thousands of developers and engineers on a daily basis. Long nights and weekends were spent keeping this project strong and dependable, with no ask for compensation or funding, until now. If your company uses `better-sqlite3`, ask your manager to consider supporting the project:
-
-- [Become a GitHub sponsor](https://github.com/sponsors/JoshuaWise)
-- [Become a backer on Patreon](https://www.patreon.com/joshuawise)
-- [Make a one-time donation on PayPal](https://www.paypal.me/joshuathomaswise)
 
 ## How other libraries compare
 
@@ -29,7 +25,7 @@ The fastest and simplest library for SQLite3 in Node.js.
 ## Installation
 
 ```bash
-npm install better-sqlite3
+npm install better-sqlite3-aergolite
 ```
 
 > You must be using Node.js v10.20.1 or above. Prebuilt binaries are available for [LTS versions](https://nodejs.org/en/about/releases/) + Linux/OSX.
@@ -39,7 +35,8 @@ npm install better-sqlite3
 ## Usage
 
 ```js
-const db = require('better-sqlite3')('foobar.db', options);
+const uri = 'file:foobar.db?blockchain=on&password=test';
+const db = require('better-sqlite3-aergolite')(uri, options);
 
 const row = db.prepare('SELECT * FROM users WHERE id = ?').get(userId);
 console.log(row.firstName, row.lastName, row.email);
@@ -75,4 +72,4 @@ For these situations, you should probably use a full-fledged RDBMS such as [Post
 
 # License
 
-[MIT](./LICENSE)
+This wrapper is licensed unser MIT and AergoLite is licensed under AGPL(v3) or commercial license
