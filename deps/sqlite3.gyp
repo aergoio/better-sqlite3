@@ -105,7 +105,7 @@
             'action_name': 'build_secp256k1_step2',
             'inputs': ['<(module_root_dir)/deps/secp256k1-vrf/configure'],
             'outputs': ['<(module_root_dir)/deps/secp256k1-vrf/makefile'],
-            'action': [ 'eval', 'cd <(module_root_dir)/deps/secp256k1-vrf && ./configure --with-bignum=no --with-benchmark=no' ]
+            'action': [ 'eval', 'cd <(module_root_dir)/deps/secp256k1-vrf && ./configure --with-bignum=no --disable-benchmark' ]
           },{
             'action_name': 'build_secp256k1_step3',
             'inputs': ['<(module_root_dir)/deps/secp256k1-vrf'],

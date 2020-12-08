@@ -9,6 +9,10 @@
       'target_name': 'better_sqlite3',
       'dependencies': ['deps/sqlite3.gyp:sqlite3'],
       'sources': ['src/better_sqlite3.cpp'],
+      'include_dirs': [
+        '<(module_root_dir)/deps/binn/src',
+        '<(module_root_dir)/deps/secp256k1-vrf/include'
+      ],
       'libraries': [
         '<(module_root_dir)/deps/binn/libbinn.a',
         '<(module_root_dir)/deps/secp256k1-vrf/.libs/libsecp256k1-vrf.a'
@@ -21,6 +25,9 @@
     {
       'target_name': 'test_extension',
       'dependencies': ['deps/sqlite3.gyp:sqlite3'],
+      'include_dirs': [
+        '<(module_root_dir)/deps/binn/src'
+      ],
       'conditions': [['sqlite3 == ""', { 'sources': ['deps/test_extension.c'] }]],
     },
   ],
