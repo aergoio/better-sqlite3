@@ -17,7 +17,7 @@
         '<(module_root_dir)/deps/binn/libbinn.a',
         '<(module_root_dir)/deps/secp256k1-vrf/.libs/libsecp256k1-vrf.a'
       ],
-      'cflags': ['-std=c++11'],
+      'cflags': ['-std=c++14'],
       'xcode_settings': {
         'OTHER_CPLUSPLUSFLAGS': ['-std=c++14', '-stdlib=libc++'],
       },

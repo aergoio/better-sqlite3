@@ -1,6 +1,6 @@
 {
   "name": "better-sqlite3-aergolite",
-  "version": "7.1.1",
+  "version": "7.1.2",
   "description": "better-sqlite3 Node.js wrapper with AergoLite",
   "homepage": "http://github.com/aergoio/better-sqlite3-aergolite",
   "author": "Joshua Wise <joshuathomaswise@gmail.com>",
@@ -12,7 +12,7 @@
   "dependencies": {
     "bindings": "^1.5.0",
     "prebuild-install": "^5.3.3",
-    "tar": "4.4.10"
+    "tar": "^6.0.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
