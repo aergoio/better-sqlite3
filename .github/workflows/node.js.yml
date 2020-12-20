@@ -1,0 +1,49 @@
+name: Node.js CI
+
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        #node-version: [10.x, 12.x, 14.x]
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install build tools (mac)
+      if: ${{ matrix.os == 'macos-latest' }}
+      run: brew install automake libtool
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+      shell: bash
+    #- run: npm run build-release
+    - run: $(npm bin)/prebuild -r node -t 10.20.0 -t 12.0.0 -t 14.0.0 --include-regex 'better_sqlite3.node$'
+      shell: bash
+    - name: list files
+      shell: bash
+      run: |
+        ls -la
+        ls -la build
+        ls -la prebuilds
+    - run: $(npm bin)/prebuild -r electron -t 9.0.0 -t 10.0.0 -t 11.0.0 --include-regex 'better_sqlite3.node$'
+      shell: bash
+    - name: list files
+      shell: bash
+      run: |
+        ls -la
+        ls -la build
+        ls -la prebuilds
+
+    - name: upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: better-sqlite3-aergolite
+        path: prebuilds/*

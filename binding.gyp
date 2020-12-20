@@ -19,8 +19,13 @@
       ],
       'cflags': ['-std=c++11'],
       'xcode_settings': {
-        'OTHER_CPLUSPLUSFLAGS': ['-std=c++11', '-stdlib=libc++'],
+        'OTHER_CPLUSPLUSFLAGS': ['-std=c++14', '-stdlib=libc++'],
       },
+      'conditions': [
+        ['OS == "win"', {
+          'libraries': ['ws2_32.lib']
+        }]
+      ]
     },
     {
       'target_name': 'test_extension',
